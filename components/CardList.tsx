@@ -14,13 +14,16 @@ export default async function CardList() {
     collectionFirebase,
     where('isFivorite', '==', true)
   );
-  onSnapshot(cards, (snapshot) => {
-    const books: any = [];
-    snapshot.docs.forEach((card) => {
-      books.push(card.data());
+  const data = new Promise((resolve, reject) => {
+    onSnapshot(cards, (snapshot) => {
+      const books: any = [];
+      snapshot.docs.forEach((card) => {
+        books.push(card.data());
+      });
+      resolve(books);
     });
   });
 
   const listCard = console.log('uid');
-  return <div>ghhghgh </div>;
+  return <div>{} </div>;
 }

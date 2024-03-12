@@ -19,12 +19,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { username: string };
 }>) {
-  const { user } = userAuth();
   return (
     <html lang='en'>
       <body className={inter.className}>
